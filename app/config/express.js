@@ -30,6 +30,10 @@ module.exports = function(app, config) {
   }));
 
   app.use(app.router);
+
+  app.use(function(req, res) {
+    res.send(404);
+  })
   
   app.set('views', config.rootPath + '/app/views');
   app.set('view engine', 'jade');
